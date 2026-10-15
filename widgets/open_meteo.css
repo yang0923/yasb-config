@@ -1,0 +1,109 @@
+.open-meteo-widget {
+  padding: var(--widget-padding);
+}
+.open-meteo-widget .icon {
+  color: #ffffffd9;
+}
+.open-meteo-widget .label {
+  color: var(--text);
+  padding-left: 4px;
+  font-weight: var(--label-weight);
+}
+.open-meteo-card {
+  border-radius: 12px;
+  min-width: 500px;
+}
+.open-meteo-card-today .label {
+  font-size: 12px;
+  color: var(--subtext0);
+}
+.open-meteo-card-today .label.location {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text);
+}
+.open-meteo-card-day {
+  border: 1px solid var(--surface1);
+  border-radius: 8px;
+  background-color: transparent;
+  padding: 8px;
+}
+.open-meteo-card-day.active {
+  background-color: #ffffff0d;
+  border-color: var(--surface2);
+}
+.open-meteo-card-day:hover {
+  background-color: #ffffff0a;
+}
+.open-meteo-card-day .day-name {
+  font-size: 11px;
+  color: var(--overlay1);
+  font-weight: 600;
+}
+.open-meteo-card-day .day-temp-max {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+}
+.open-meteo-card-day .day-temp-min {
+  font-size: 12px;
+  color: var(--subtext0);
+}
+.open-meteo-card .hourly-container {
+  background: transparent;
+  border: none;
+  min-height: 120px;
+}
+.open-meteo-card .hourly-data {
+  font-size: 11px;
+  font-weight: 700;
+}
+.open-meteo-card .hourly-data.temperature {
+  background-color: var(--yellow);
+}
+.open-meteo-card .hourly-data.rain {
+  background-color: var(--blue);
+}
+.open-meteo-card .hourly-data.snow {
+  background-color: var(--sapphire);
+}
+.open-meteo-card .hourly-data-button {
+  border-radius: 4px;
+  min-height: 24px;
+  min-width: 24px;
+  max-width: 24px;
+  max-height: 24px;
+  font-size: 14px;
+  color: #ffffff4d;
+  border: 1px solid transparent;
+}
+.open-meteo-card .hourly-data-button.active {
+  color: var(--text);
+  background-color: #ffffff1a;
+  border: 1px solid #ffffff1a;
+}
+.open-meteo-card .search-input {
+  border: 1px solid var(--surface1);
+  border-radius: 8px;
+  background-color: #ffffff0d;
+  color: var(--text);
+  font-size: 13px;
+  padding: 8px 12px;
+}
+.open-meteo-card .search-input:focus {
+  border-color: var(--lavender);
+  background-color: #ffffff12;
+}
+.open-meteo-card .search-results {
+  background: transparent;
+  color: var(--text);
+  font-size: 13px;
+}
+.open-meteo-card .search-results::item {
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin: 2px 6px;
+}
+.open-meteo-card .search-results::item:hover {
+  background-color: #ffffff14;
+}

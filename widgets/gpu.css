@@ -1,0 +1,50 @@
+.gpu-widget {
+  padding: var(--widget-padding);
+}
+.gpu-widget .icon {
+  color: var(--pink);
+}
+.gpu-widget .label {
+  color: var(--text);
+  font-weight: var(--label-weight);
+}
+.gpu-widget .label.status-low {
+  color: var(--status-low);
+}
+.gpu-widget .label.status-medium {
+  color: var(--status-medium);
+}
+.gpu-widget .label.status-high {
+  color: var(--status-high);
+}
+.gpu-widget .label.status-critical {
+  color: var(--status-critical);
+}
+.gpu-popup {
+  min-width: var(--menu-min-width);
+}
+.gpu-popup .header .text {
+  font-size: 15px;
+  color: var(--text);
+  font-weight: 600;
+  padding: 10px;
+}
+.gpu-popup .stats {
+  padding: 10px;
+}
+.gpu-popup .stats .stat-label {
+  font-size: 12px;
+  color: var(--overlay1);
+  font-weight: 500;
+}
+.gpu-popup .stats .stat-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+}
+.gpu-popup .gpu-graph {
+  color: var(--pink);
+}
+.gpu-popup .gpu-graph-grid {
+  color: #ffffff0d;
+}

@@ -1,0 +1,127 @@
+.todo-widget {
+  padding: var(--widget-padding);
+}
+.todo-widget .icon {
+  color: var(--teal);
+}
+.todo-widget .label {
+  font-weight: var(--label-weight);
+}
+.todo-menu {
+  min-width: 400px;
+  max-width: 400px;
+  min-height: 480px;
+  max-height: 480px;
+}
+.todo-menu .header .add-task-button,
+.todo-menu .header .tab-buttons {
+  border: none;
+  border-radius: 8px;
+  color: var(--text);
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.todo-menu .header .tab-buttons.in-progress:checked {
+  color: var(--teal);
+  background-color: #94e2d526;
+}
+.todo-menu .header .tab-buttons.completed:checked {
+  color: var(--red);
+  background-color: #f38ba826;
+}
+.todo-menu .header .tab-buttons.sort {
+  background-color: #ffffff14;
+  min-height: 22px;
+  min-width: 22px;
+  max-width: 22px;
+  max-height: 22px;
+  padding: 0;
+  margin: 0 6px 0 0;
+  border-radius: 6px;
+}
+.todo-menu .task-item {
+  background-color: #ffffff0a;
+  border-radius: 8px;
+  margin: 0 10px 8px;
+  border: 1px solid #ffffff0f;
+  padding: 8px 0;
+}
+.todo-menu .task-item.expanded {
+  border-color: #ffffff1f;
+  background-color: #ffffff0d;
+}
+.todo-menu .task-item:hover {
+  background-color: #ffffff0f;
+}
+.todo-menu .task-item .title {
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 0 10px 6px;
+}
+.todo-menu .task-item .description {
+  color: var(--subtext0);
+  font-size: 11px;
+  padding: 0 10px 6px;
+}
+.todo-menu .task-item.completed .title,
+.todo-menu .task-item.completed .description {
+  text-decoration: line-through;
+  color: var(--overlay0);
+}
+.todo-menu .task-checkbox {
+  background: transparent;
+  border: none;
+  margin-left: 10px;
+  font-size: 16px;
+  color: var(--text);
+}
+.todo-menu .task-checkbox:checked {
+  color: var(--teal);
+}
+.todo-menu .task-info-row .date-text,
+.todo-menu .task-info-row .category-text {
+  color: var(--overlay1);
+  font-size: 11px;
+  font-weight: 500;
+}
+.todo-menu .task-info-row .category-text.important,
+.todo-menu .task-info-row .category-icon.important {
+  color: var(--red);
+}
+.todo-menu .task-info-row .category-text.urgent,
+.todo-menu .task-info-row .category-icon.urgent {
+  color: var(--peach);
+}
+.todo-menu .task-info-row .category-text.soon,
+.todo-menu .task-info-row .category-icon.soon {
+  color: var(--teal);
+}
+.todo-menu .task-info-row .category-text.today,
+.todo-menu .task-info-row .category-icon.today {
+  color: var(--yellow);
+}
+.todo-menu .task-info-row .delete-task-button {
+  background-color: #ffffff1a;
+  color: var(--text);
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 6px;
+  min-height: 20px;
+  max-height: 20px;
+  font-weight: 600;
+  margin-right: 8px;
+}
+.todo-menu .task-info-row .delete-task-button:hover {
+  background-color: #f38ba833;
+  color: var(--red);
+}
+.todo-menu .no-tasks {
+  color: var(--overlay0);
+  font-size: 16px;
+}
+.todo-menu .no-tasks-icon {
+  font-size: 64px;
+  color: var(--overlay0);
+}

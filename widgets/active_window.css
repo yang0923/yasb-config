@@ -1,0 +1,13 @@
+.active-window-widget {
+  padding: var(--widget-padding);
+  color: var(--lavender);
+}
+
+.active-window-widget .label {
+  font-weight: var(--label-weight);
+  transition: color 0.25s ease;
+}
+
+.active-window-widget:hover .label {
+  color: var(--text);
+}

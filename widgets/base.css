@@ -1,0 +1,196 @@
+:root {
+  /* ========== Catppuccin Mocha 色板 ========== */
+  --base: #1e1e2e;
+  --mantle: #181825;
+  --crust: #11111b;
+  --surface0: #313244;
+  --surface1: #45475a;
+  --surface2: #585b70;
+  --overlay0: #6c7086;
+  --overlay1: #7f849c;
+  --overlay2: #9399b2;
+  --text: #cdd6f4;
+  --subtext0: #a6adc8;
+  --subtext1: #bac2de;
+  --lavender: #b4befe;
+  --blue: #89b4fa;
+  --sapphire: #74c7ec;
+  --sky: #89dceb;
+  --teal: #94e2d5;
+  --green: #a6e3a1;
+  --yellow: #f9e2af;
+  --peach: #fab387;
+  --maroon: #eba0ac;
+  --red: #f38ba8;
+  --mauve: #cba6f7;
+  --pink: #f5c2e7;
+  --flamingo: #f2cdcd;
+  --rosewater: #f5e0dc;
+
+  /* ========== 通用布局变量 ========== */
+  --widget-padding: 0 2px;
+  --widget-radius: 8px;
+  --icon-size: 16px;
+  --label-size: 14px;
+  --label-weight: 500;
+
+  /* ========== 菜单/弹窗通用变量 ========== */
+  --menu-bg: #181825e6;
+  --menu-border: 1px solid #b4befe14;
+  --menu-radius: 10px;
+  --menu-min-width: 360px;
+
+  /* ========== 状态阈值颜色 ========== */
+  --status-low: var(--green);
+  --status-medium: var(--yellow);
+  --status-high: var(--peach);
+  --status-critical: var(--red);
+}
+* {
+  font-size: 13px;
+  font-family:
+    "JetBrainsMono NFP", "JetBrainsMono Nerd Font Propo", "Segoe Fluent Icons",
+    monospace;
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.yasb-bar {
+  background-color: #181825d7;
+  border-bottom: 1px solid #b4befe0f;
+  padding-top: 2px;
+}
+.widget {
+  padding: 0;
+  color: var(--text);
+}
+.widget .widget-container {
+  border-radius: var(--widget-radius);
+  padding: 2px 4px;
+}
+.widget .label,
+.widget .icon {
+  color: var(--text);
+  padding: 0 2px;
+  font-weight: var(--label-weight);
+}
+.widget .icon {
+  font-size: var(--icon-size);
+  font-weight: 400;
+}
+/* ========== 通用状态阈值 class ========== */
+.status-low {
+  color: var(--status-low);
+}
+.status-medium {
+  color: var(--status-medium);
+}
+.status-high {
+  color: var(--status-high);
+}
+.status-critical {
+  color: var(--status-critical);
+}
+.container-left,
+.container-center,
+.container-right {
+  margin: 0;
+  padding: 0;
+}
+.notes-menu,
+.todo-menu,
+.ai-chat-popup,
+.github-menu,
+.traffic-menu,
+.cpu-popup,
+.memory-popup,
+.gpu-popup,
+.pomodoro-menu,
+.audio-menu,
+.wifi-menu,
+.brightness-menu,
+.open-meteo-card {
+  background-color: var(--menu-bg);
+  border: var(--menu-border);
+  border-radius: var(--menu-radius);
+}
+QScrollBar:vertical {
+  background-color: #0003;
+  width: 8px;
+  border-radius: 4px;
+}
+QScrollBar:horizontal {
+  background-color: #0003;
+  height: 8px;
+  border-radius: 4px;
+}
+QScrollBar::handle {
+  background-color: var(--surface2);
+  border-radius: 4px;
+}
+QScrollBar::handle:hover {
+  background-color: var(--overlay0);
+}
+QScrollBar::add-line,
+QScrollBar::sub-line {
+  height: 0;
+  width: 0;
+}
+QScrollBar::add-page,
+QScrollBar::sub-page {
+  background: none;
+}
+.tooltip {
+  background-color: var(--surface0);
+  border: 1px solid var(--surface1);
+  border-radius: 4px;
+  color: var(--subtext1);
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 4px;
+  border-style: solid;
+}
+.notification-dot {
+  background-color: var(--red);
+  border-radius: 50%;
+  min-width: 6px;
+  min-height: 6px;
+  max-width: 6px;
+  max-height: 6px;
+}
+.context-menu {
+  background-color: var(--surface0);
+  border: none;
+  padding: 5px 0;
+  font-size: 12px;
+  color: var(--text);
+  border-radius: 8px;
+}
+.context-menu::item {
+  background-color: transparent;
+  padding: 7px 12px;
+  margin: 3px 6px;
+  border-radius: 5px;
+  min-width: 90px;
+}
+.context-menu::item:selected {
+  background-color: var(--surface1);
+  color: var(--text);
+}
+.context-menu::item:checked {
+  background-color: #b4befe40;
+  color: var(--lavender);
+}
+.context-menu::item:pressed {
+  background-color: var(--surface2);
+}
+.context-menu::item:disabled {
+  color: var(--overlay0);
+}
+.context-menu::separator {
+  height: 1px;
+  background-color: var(--surface1);
+  margin: 3px 7px;
+}

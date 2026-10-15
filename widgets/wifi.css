@@ -1,0 +1,55 @@
+.wifi-widget {
+  padding: var(--widget-padding);
+}
+.wifi-widget .icon {
+  color: var(--sky);
+}
+.wifi-menu {
+  min-width: var(--menu-min-width);
+}
+.wifi-menu .header {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 12px;
+  color: var(--text);
+  border-bottom: 1px solid #ffffff14;
+}
+.wifi-menu .wifi-item {
+  min-height: 36px;
+  padding: 6px 10px;
+  margin: 4px 6px;
+  border-radius: 6px;
+}
+.wifi-menu .wifi-item:hover {
+  background-color: #ffffff0f;
+}
+.wifi-menu .wifi-item[active="true"] {
+  background-color: #ffffff1a;
+}
+.wifi-menu .wifi-item .icon {
+  font-family: "Segoe Fluent Icons";
+  font-size: 22px;
+  margin-right: 8px;
+  color: var(--sky);
+}
+.wifi-menu .wifi-item .name {
+  font-size: 13px;
+  font-weight: 500;
+}
+.wifi-menu .wifi-item .connect {
+  background-color: #ffffff1f;
+  padding: 4px 16px;
+  border-radius: 5px;
+  font-size: 12px;
+  border: none;
+  font-weight: 500;
+}
+.wifi-menu .wifi-item .connect:hover {
+  background-color: #ffffff2e;
+}
+.wifi-menu .footer {
+  font-size: 11px;
+  padding: 8px 12px;
+  color: var(--overlay1);
+  border-top: 1px solid #ffffff14;
+}

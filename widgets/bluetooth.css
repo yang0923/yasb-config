@@ -1,0 +1,6 @@
+.bluetooth-widget {
+  padding: var(--widget-padding);
+}
+.bluetooth-widget .icon {
+  color: var(--blue);
+}

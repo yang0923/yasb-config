@@ -1,0 +1,60 @@
+.github-widget {
+  padding: 0 5px;
+}
+.github-widget .icon {
+  font-size: 15px;
+  color: var(--overlay2);
+}
+.github-widget .icon.new-notification {
+  color: var(--red);
+}
+.github-menu {
+  max-height: 500px;
+  min-height: 480px;
+  min-width: 420px;
+}
+.github-menu .header {
+  border-bottom: 1px solid #ffffff14;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 12px;
+  color: var(--text);
+}
+.github-menu .footer {
+  border-top: 1px solid #ffffff14;
+  padding: 6px 10px 8px;
+}
+.github-menu .footer .label {
+  font-size: 11px;
+  color: var(--overlay1);
+}
+.github-menu .contents .item {
+  min-height: 42px;
+  padding: 8px 12px;
+  border-bottom: 1px solid #ffffff0d;
+}
+.github-menu .contents .item:hover {
+  background-color: #ffffff0d;
+}
+.github-menu .contents .item .title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--subtext1);
+}
+.github-menu .contents .item .description {
+  font-size: 11px;
+  color: var(--overlay1);
+  margin-top: 2px;
+}
+.github-menu .contents .item.new .title,
+.github-menu .contents .item.new .description {
+  color: var(--text);
+}
+.github-menu .contents .item .icon {
+  font-size: 15px;
+  padding: 0 6px;
+  color: var(--overlay1);
+}
+.github-menu .contents .item.new .icon {
+  color: var(--green);
+}

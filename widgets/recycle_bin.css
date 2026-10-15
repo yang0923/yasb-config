@@ -1,0 +1,28 @@
+.recycle-bin-widget {
+  padding: 0;
+  margin: 4px 2px;
+  border-radius: var(--widget-radius);
+}
+.recycle-bin-widget:hover {
+  background-color: #31324499;
+}
+.recycle-bin-widget .icon {
+  margin-right: 6px;
+}
+.recycle-bin-widget .label {
+  color: var(--text);
+  font-weight: var(--label-weight);
+}
+.recycle-bin-widget .icon.bin-empty {
+  color: var(--green);
+}
+.recycle-bin-widget .label.bin-empty {
+  color: var(--subtext0);
+}
+.recycle-bin-widget .icon.bin-filled {
+  color: var(--red);
+}
+.recycle-bin-widget .label.bin-filled {
+  color: var(--lavender);
+  font-weight: 700;
+}

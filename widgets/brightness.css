@@ -1,0 +1,13 @@
+.brightness-widget {
+  padding: var(--widget-padding);
+}
+.brightness-widget .icon {
+  color: var(--yellow);
+  padding: 0 5px;
+}
+.brightness-menu {
+  min-width: 240px;
+}
+.brightness-slider {
+  border: none;
+}

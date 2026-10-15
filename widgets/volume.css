@@ -1,0 +1,15 @@
+.volume-widget {
+  padding: var(--widget-padding);
+}
+.volume-widget .icon {
+  color: var(--teal);
+  margin-right: 3px;
+  padding: 0 3px;
+}
+.volume-widget .label {
+  font-weight: var(--label-weight);
+}
+.volume-widget .label.muted,
+.volume-widget .icon.muted {
+  color: var(--overlay0);
+}

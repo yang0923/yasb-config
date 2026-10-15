@@ -1,0 +1,50 @@
+.glazewm-workspaces {
+  margin: 0;
+  padding: 0 6px;
+}
+
+.glazewm-workspaces .ws-btn {
+  background-color: transparent;
+  border: none;
+  padding: 4px 8px;
+  margin: 0 3px;
+  color: var(--overlay1);
+  border-radius: 6px;
+  transition:
+    background-color 0.22s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.22s ease;
+}
+
+/* 有窗口但未聚焦 */
+.glazewm-workspaces .ws-btn.populated {
+  color: var(--subtext1);
+}
+
+/* 活动工作区（淡紫填充，保持你原来的样子） */
+.glazewm-workspaces .ws-btn.active_populated,
+.glazewm-workspaces .ws-btn.active_empty {
+  color: var(--lavender);
+  background-color: #b4befe26;
+  font-weight: 600;
+}
+
+/* 新增：聚焦工作区（键盘焦点所在，在 active 基础上更强） */
+.glazewm-workspaces .ws-btn.focused_populated,
+.glazewm-workspaces .ws-btn.focused_empty {
+  color: var(--lavender);
+  background-color: #b4befe40;
+  font-weight: 700;
+}
+
+/* 悬停 */
+.glazewm-workspaces .ws-btn:hover,
+.glazewm-workspaces .ws-btn.populated:hover {
+  background-color: #ffffff14;
+  color: var(--text);
+}
+
+.glazewm-workspaces .offline-status {
+  color: var(--red);
+  font-size: 11px;
+  font-weight: 600;
+}

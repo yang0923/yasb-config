@@ -1,0 +1,19 @@
+.audio-menu {
+  min-width: 300px;
+}
+.audio-menu .system-volume-container .volume-slider {
+  border: none;
+}
+.audio-menu .audio-container .device {
+  background: transparent;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+.audio-menu .audio-container .device.selected {
+  background-color: #ffffff1a;
+}
+.audio-menu .audio-container .device:hover {
+  background-color: #ffffff14;
+}
