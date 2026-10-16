@@ -66,7 +66,7 @@ bars:
     # 窗口标志（系统行为）
     window_flags:
       always_on_top: false # 任务栏是否总在最前（false 可被全屏程序覆盖）
-      windows_app_bar: false # 使用 Windows App Bar 模式（任务栏占位）
+      windows_app_bar: true # 使用 Windows App Bar 模式（任务栏占位）
       hide_on_fullscreen: true # 全屏应用时自动隐藏任务栏
 
     # 任务栏尺寸
