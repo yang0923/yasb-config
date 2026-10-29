@@ -1,42 +1,10 @@
-# GlazeWM | Catppuccin Mocha | Glazing Mocha
-# Place this file at: C:/users/{username}/.config/yasb/config.yaml
-# You need to Replace {username} with your username and insert your wallpaper path at line 76. also provide the info at line 305 to use the ai chat.
+# YASB Reborn v2.0.7 · Catppuccin Mocha · GlazeWM 集成
+# 布局与设计说明见 README.md；颜色 / 间距 token 见 widgets/tokens.css
 watch_stylesheet: true
 watch_config: true
 debug: false
 update_check: true
 show_systray: true
-
-# =============================================================================
-# 全局样式配置说明（样式统一管理）
-# =============================================================================
-# 所有通用样式变量定义在 widgets/base.css 的 :root 中，修改即可全局生效：
-#
-# --- Catppuccin Mocha 色板 ---
-#   --base / --mantle / --crust / --surface0~2 / --overlay0~2
-#   --text / --subtext0~1 / --lavender / --blue / --sapphire / --sky
-#   --teal / --green / --yellow / --peach / --maroon / --red
-#   --mauve / --pink / --flamingo / --rosewater
-#
-# --- 通用布局 ---
-#   --widget-padding: 0 5px    (所有 widget 统一内边距)
-#   --widget-radius: 8px       (widget 圆角)
-#   --icon-size: 13px          (图标字号)
-#   --label-size: 13px         (标签字号)
-#   --label-weight: 500        (标签字重)
-#
-# --- 菜单/弹窗 ---
-#   --menu-bg: #181825e6       (菜单背景色)
-#   --menu-border: 1px solid #b4befe14  (菜单边框)
-#   --menu-radius: 10px        (菜单圆角)
-#   --menu-min-width: 360px    (菜单最小宽度)
-#
-# --- 状态阈值颜色 ---
-#   --status-low: var(--green)       (低负载)
-#   --status-medium: var(--yellow)   (中负载)
-#   --status-high: var(--peach)      (高负载)
-#   --status-critical: var(--red)    (临界)
-# =============================================================================
 
 glazewm:
   start_command: "glazewm start"
@@ -44,83 +12,269 @@ glazewm:
   reload_command: "glazewm reload-config"
 
 bars:
-  yasb-bar: # 任务栏名称（可自定义）
-    # 屏幕选择
-    # screens: ["primary"] # 显示在哪个屏幕，["primary"] 表示主屏幕
-    screens: ["**"] # 显示在哪个屏幕，["primary"] 表示主屏幕
+  yasb-bar:
+    # 单屏环境，这里表示所有屏幕；将来多屏可用 ["primary"] 或显示器名
+    screens: ["**"]
+    class_name: "yasb-bar"
 
-    class_name: "yasb-bar" # 窗口类名（用于样式/规则匹配）
-
-    # 任务栏位置与对齐
     alignment:
-      position: "top" # 任务栏位置：top / bottom / left / right
-      align: "center" # 内容对齐方式：center / left / right（仅水平栏有效）
+      position: "top"
+      align: "center"
 
-    # 毛玻璃模糊效果
     blur_effect:
-      enabled: true # 是否启用模糊效果
-      dark_mode: true # 模糊背景是否适配深色模式
-      round_corners: true # 任务栏圆角
-      border_color: "None" # 边框颜色，"None" 表示无边框，可填颜色值
+      enabled: true
+      dark_mode: true
+      round_corners: true
+      border_color: "None"
 
-    # 窗口标志（系统行为）
     window_flags:
-      always_on_top: false # 任务栏是否总在最前（false 可被全屏程序覆盖）
-      windows_app_bar: false # 使用 Windows App Bar 模式（任务栏占位）
-      hide_on_fullscreen: true # 全屏应用时自动隐藏任务栏
+      # 不占位：窗口让位交给 GlazeWM 的 outer_gap.top（42px = 栏高 36 + 6 间距）
+      always_on_top: false
+      windows_app_bar: false
+      hide_on_fullscreen: true
 
-    # 任务栏尺寸
     dimensions:
-      width: "100%" # 宽度（支持像素 px 或百分比 %）
-      height: 36 # 高度（像素）
+      width: "100%"
+      height: 36
 
-    # 内边距（任务栏内部内容与边缘的距离）
     padding:
-      top: 2 # 上内边距
-      left: 6 # 左内边距
-      bottom: 0 # 下内边距
-      right: 6 # 右内边距
+      top: 2
+      left: 6
+      bottom: 0
+      right: 6
 
-    # 动画效果
     animation:
-      enabled: true # 是否启用动画（显示/隐藏）
-      duration: 500 # 动画时长（毫秒）
+      enabled: true
+      duration: 500
 
-    # 小部件布局
     widgets:
-      left: # 左侧区域显示的小组件
-        - "bin" # 回收站
-        # - "wallpapers"
-        # - "power_menu" # 电源菜单（关机/重启/锁定）
-        # - "notes" # 便签
-        # - "todo" # 待办事项
-        - "glazewm_binding_mode" # GlazeWM 当前模式
-        - "glazewm_tiling_direction" # GlazeWM 平铺方向指示器
-        - "glazewm_workspaces" # GlazeWM 工作区切换器
-        - "active_window" # 当前活动窗口标题
-
-      center: # 中间区域
-        # - "pomodoro" # 番茄时钟: 计时工具
-        # - "glazewm_binding_mode" # GlazeWM 当前模式
-        # - "glazewm_tiling_direction" # GlazeWM 平铺方向指示器
-        # - "glazewm_workspaces" # GlazeWM 工作区切换器
-        # - "active_window" # 当前活动窗口标题
-        - "cpu" # CPU 使用率
-        - "gpu" # GPU 使用率
-        - "memory" # 内存使用率
-        - "disk" # 磁盘使用率
-        - "traffic" # 网络流量监控
-
-      right: # 右侧区域
-        - "media" # 媒体信息显示
-        # - "systray" # 系统托盘图标
-        # - "github" # github
-        - "brightness" # 亮度滑块/指示器
-        - "volume" # 音量控制
-        - "clock" # 日期时钟
-        - "notifications" # 通知中心
+      left:
+        - "bin"
+        - "glazewm_binding_mode"
+        - "glazewm_tiling_direction"
+        - "glazewm_workspaces"
+        - "active_window"
+      center:
+        - "cpu"
+        - "gpu"
+        - "memory"
+        - "disk"
+        - "traffic"
+      right:
+        - "media"
+        - "brightness"
+        - "volume"
+        - "clock"
+        - "notifications"
 
 widgets:
+  # ---------- 左侧：窗口管理 ----------
+  bin:
+    type: "yasb.recycle_bin.RecycleBinWidget"
+    options:
+      label: "<span>{icon}</span>{items_count}"
+      label_alt: "Items {items_count}, Total size ({items_size})"
+      icons:
+        bin_empty: "\udb82\ude7a"
+        bin_filled: "\udb82\ude79"
+      # 左键打开、右键清空（带确认），避免误清空
+      callbacks:
+        on_left: "open_bin"
+        on_middle: "do_nothing"
+        on_right: "empty_bin"
+      keybindings:
+        - keys: "win+del"
+          action: "empty_bin"
+      show_confirmation: true
+
+  glazewm_binding_mode:
+    type: "glazewm.binding_mode.GlazewmBindingModeWidget"
+    options:
+      hide_if_no_active: false
+      label_if_no_active: ""
+      default_icon: "\uf071"
+      icons:
+        none: ""
+        resize: "\uf071"
+        pause: "\uf28c"
+      binding_modes_to_cycle_through:
+        - "none"
+        - "resize"
+      callbacks:
+        on_left: "next_binding_mode"
+        on_middle: "toggle_label"
+        on_right: "disable_binding_mode"
+
+  glazewm_tiling_direction:
+    type: "glazewm.tiling_direction.GlazewmTilingDirectionWidget"
+    options:
+      horizontal_label: "\udb81\udce1"
+      vertical_label: "\udb81\udce2"
+
+  glazewm_workspaces:
+    type: "glazewm.workspaces.GlazewmWorkspacesWidget"
+    options:
+      offline_label: "GlazeWM 离线"
+      hide_if_offline: false
+      monitor_exclusive: true
+      enable_scroll_switching: true
+      reverse_scroll_direction: false
+      app_icons:
+        enabled_populated: true
+        enabled_active: true
+        enabled_focused: true
+        size: 16
+        max_icons: 3
+        hide_label: false
+        hide_duplicates: true
+        hide_floating: false
+
+  active_window:
+    type: "yasb.active_window.ActiveWindowWidget"
+    options:
+      label: "{win[title]}"
+      label_alt: "[{win[process][name]}] {win[title]}"
+      label_no_window: ""
+      label_icon: true
+      label_icon_size: 18
+      max_length: 32
+      max_length_ellipsis: "…"
+      monitor_exclusive: true
+
+  # ---------- 中间：系统监控（刷新频率按 CPU 开销从低到高排列） ----------
+  cpu:
+    type: "yasb.cpu.CpuWidget"
+    options:
+      label: "<span>\uf4bc</span> {info[percent][total]}%"
+      label_alt: "<span>\uf437</span> {info[freq][current]} MHz"
+      update_interval: 3000
+      # 阈值：<50 不着色，50-75 黄，75-90 橙，>90 红
+      cpu_thresholds:
+        low: 50
+        medium: 75
+        high: 90
+      # 左键切标签，中键开任务管理器，右键看图表
+      callbacks:
+        on_left: "toggle_label"
+        on_middle: "exec cmd /c Taskmgr"
+        on_right: "toggle_menu"
+      menu:
+        enabled: true
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "system"
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+        show_graph: true
+        show_graph_grid: false
+        graph_history_size: 60
+
+  gpu:
+    type: "yasb.gpu.GpuWidget"
+    options:
+      label: "<span>\udb81\udd03</span> {info[utilization]}%"
+      label_alt: "<span>\udb81\udd03</span> {info[temp]}°C | {info[mem_used]}"
+      gpu_index: 0
+      update_interval: 3000
+      gpu_thresholds:
+        low: 50
+        medium: 75
+        high: 90
+      callbacks:
+        on_left: "toggle_label"
+        on_middle: "do_nothing"
+        on_right: "toggle_menu"
+      menu:
+        enabled: true
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "system"
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+        show_graph: true
+        show_graph_grid: false
+        graph_history_size: 60
+
+  memory:
+    type: "yasb.memory.MemoryWidget"
+    options:
+      label: "<span>\uefc5</span> {virtual_mem_percent}%"
+      label_alt: "<span>\uefc5</span> {virtual_mem_used}/{virtual_mem_total}"
+      update_interval: 5000
+      memory_thresholds:
+        low: 70
+        medium: 85
+        high: 95
+      callbacks:
+        on_left: "toggle_label"
+        on_middle: "do_nothing"
+        on_right: "toggle_menu"
+      menu:
+        enabled: true
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "system"
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+        show_graph: true
+        show_graph_grid: false
+        graph_history_size: 60
+
+  disk:
+    type: "yasb.disk.DiskWidget"
+    options:
+      label: "<span>\uf473</span> {space[used][percent]}"
+      label_alt: "<span>\uf473</span> {space[used][gb]} / {space[total][gb]}"
+      volume_label: "C"
+      update_interval: 60
+      disk_thresholds:
+        low: 70
+        medium: 85
+        high: 95
+      group_label:
+        volume_labels: ["C", "D", "E"]
+        show_label_name: true
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "system"
+        alignment: "right"
+        direction: "down"
+      callbacks:
+        on_left: "toggle_label"
+        on_middle: "do_nothing"
+        on_right: "toggle_group"
+
+  traffic:
+    type: "yasb.traffic.TrafficWidget"
+    options:
+      label: "\ueb01 \ueab4 {download_speed} | \ueab7 {upload_speed}"
+      label_alt: "Download {download_speed} | Upload {upload_speed}"
+      update_interval: 2000
+      callbacks:
+        on_left: "toggle_label"
+        on_middle: "do_nothing"
+        on_right: "toggle_menu"
+      menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "system"
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+
+  # ---------- 右侧：媒体与系统 ----------
   media:
     type: "yasb.media.MediaWidget"
     options:
@@ -141,7 +295,8 @@ widgets:
       controls_hide: false
       thumbnail_alpha: 80
       thumbnail_padding: 8
-      thumbnail_corner_radius: 16
+      # 16 会让遮罩裁切失败并刷错误日志，8 足够
+      thumbnail_corner_radius: 8
       icons:
         prev_track: "\ue892"
         next_track: "\ue893"
@@ -169,85 +324,72 @@ widgets:
       scrolling_label:
         enabled: true
         update_interval_ms: 33
-        style: "left" # can be "left", "right", "bounce", "bounce-ease"
+        style: "left"
         separator: " | "
         label_padding: 0
         always_scroll: false
-        # Easing curve params: https://www.desmos.com/calculator/j7eamemxzi
         ease_slope: 20
         ease_pos: 0.8
         ease_min: 0.5
 
-  bin:
-    type: "yasb.recycle_bin.RecycleBinWidget"
+  brightness:
+    type: "yasb.brightness.BrightnessWidget"
     options:
-      label: "<span>{icon}</span>{items_count}"
-      label_alt: "Items {items_count}, Total size ({items_size})"
-      icons:
-        bin_empty: "\udb82\ude7a"
-        bin_filled: "\udb82\ude79"
+      label: "<span>{icon}</span>"
+      label_alt: "Brightness {percent}%"
+      tooltip: true
+      brightness_toggle_level: [0, 50, 100]
+      brightness_icons:
+        - "\udb80\udcde"
+        - "\udb80\udcdd"
+        - "\udb80\udcdf"
+        - "\udb80\udce0"
+      brightness_menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "system"
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
       callbacks:
-        on_left: "empty_bin"
-        on_right: "open_bin"
+        on_left: "toggle_label"
         on_middle: "do_nothing"
-      keybindings:
-        - keys: "win+del"
-          action: "empty_bin"
-      show_confirmation: true
+        on_right: "toggle_brightness_menu"
 
-  glazewm_workspaces:
-    type: "glazewm.workspaces.GlazewmWorkspacesWidget"
+  volume:
+    type: "yasb.volume.VolumeWidget"
     options:
-      offline_label: "GlazeWM 离线"
-      hide_if_offline: false
-      monitor_exclusive: true
-      enable_scroll_switching: true
-      reverse_scroll_direction: false
-      app_icons:
-        enabled_populated: true # 开启：有窗口的工作区显示图标
-        enabled_active: true # 开启：活动工作区显示图标
-        enabled_focused: true # 显式设置聚焦状态
-        size: 16
-        max_icons: 3 # 最多显示 3 个图标，避免溢出
-        hide_label: false
-        hide_duplicates: true
-        hide_floating: false
-
-  glazewm_binding_mode:
-    type: "glazewm.binding_mode.GlazewmBindingModeWidget"
-    options:
-      hide_if_no_active: false
-      label_if_no_active: ""
-      default_icon: "\uf071"
+      label: "<span>{icon}</span> {level}"
+      label_alt: "Vol {volume}"
+      # 键为音量上限（%），muted 单独一档
       icons:
-        none: ""
-        resize: "\uf071" # 调整大小模式
-        pause: "\uf28c" # 暂停模式
-      binding_modes_to_cycle_through:
-        - "none"
-        - "resize"
+        muted: "\ueee8"
+        "10": "\uf026"
+        "30": "\uf027"
+        "60": "\uf027"
+        "100": "\uf028"
+      scroll_step: 2
+      slider_beep: false
+      tooltip: true
+      audio_menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "system"
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+        show_apps: true
+        show_app_labels: false
+        show_app_icons: true
+        show_apps_expanded: false
       callbacks:
-        on_left: "next_binding_mode"
-        on_middle: "toggle_label"
-        on_right: "disable_binding_mode"
-
-  glazewm_tiling_direction:
-    type: "glazewm.tiling_direction.GlazewmTilingDirectionWidget"
-    options:
-      horizontal_label: "\udb81\udce1"
-      vertical_label: "\udb81\udce2"
-
-  active_window:
-    type: "yasb.active_window.ActiveWindowWidget"
-    options:
-      label: "{win[title]}"
-      label_alt: "[{win[process][name]}] {win[title]}" # Alt 标签显示进程名
-      label_no_window: ""
-      label_icon: true
-      label_icon_size: 18 # 略微放大图标
-      max_length: 32 # 从 20 放宽到 32
-      max_length_ellipsis: "…"
-      monitor_exclusive: true
+        on_left: "toggle_volume_menu"
+        on_middle: "do_nothing"
+        on_right: "toggle_mute"
 
   clock:
     type: "yasb.clock.ClockWidget"
@@ -275,112 +417,6 @@ widgets:
         on_middle: "do_nothing"
         on_right: "toggle_calendar"
 
-  # pomodoro:
-  #   type: "yasb.pomodoro.PomodoroWidget"
-  #   options:
-  #     label: "<span>{icon}</span> {remaining}"
-  #     label_alt: "<span>{icon}</span> {session}/{total_sessions} - {status}"
-  #     work_duration: 25
-  #     break_duration: 5
-  #     long_break_duration: 15
-  #     long_break_interval: 4
-  #     auto_start_breaks: true
-  #     auto_start_work: true
-  #     sound_notification: true
-  #     show_notification: true
-  #     hide_on_break: false
-  #     session_target: 8
-  #     icons:
-  #       work: "\uf252"
-  #       break: "\uf253"
-  #       paused: "\uf254"
-  #     menu:
-  #       blur: true
-  #       round_corners: true
-  #       round_corners_type: "normal"
-  #       border_color: "System"
-  #       alignment: "center"
-  #       direction: "down"
-  #       offset_top: 6
-  #       offset_left: 0
-  #       circle_background_color: "#1e1e2e"
-  #       circle_work_progress_color: "#cba6f7"
-  #       circle_break_progress_color: "#a6e3a1"
-  #       circle_thickness: 8
-  #       circle_size: 160
-  #     callbacks:
-  #       on_left: "toggle_menu"
-  #       on_middle: "reset_timer"
-  #       on_right: "toggle_label"
-
-  # notes:
-  #   type: "yasb.notes.NotesWidget"
-  #   options:
-  #     label: "<span>\udb82\udd0c</span> {count}"
-  #     label_alt: "{count} notes"
-  #     menu:
-  #       blur: true
-  #       round_corners: true
-  #       round_corners_type: "normal"
-  #       border_color: "System"
-  #       alignment: "center"
-  #       direction: "down"
-  #       offset_top: 6
-  #       offset_left: 0
-  #       max_title_size: 150
-  #       show_date_time: true
-  #     icons:
-  #       note: "\udb82\udd0c"
-  #       delete: "\ueab8"
-  #       copy: "\uebcc"
-  #       float_on: "\udb84\udcac"
-  #       float_off: "\udb84\udca9"
-  #       close: "\uf00d"
-  #     callbacks:
-  #       on_left: "toggle_menu"
-  #       on_middle: "do_nothing"
-  #       on_right: "toggle_label"
-
-  todo:
-    type: "yasb.todo.TodoWidget"
-    options:
-      label: "<span>\uf0ae</span> {count}"
-      label_alt: "<span>\uf0ae</span> {completed}/{count} done"
-      menu:
-        blur: true
-        round_corners: true
-        round_corners_type: "normal"
-        border_color: "system"
-        alignment: "center"
-        direction: "down"
-        offset_top: 6
-        offset_left: 0
-      icons:
-        add: "\uf501 New Task"
-        edit: "Edit"
-        delete: "Delete"
-        date: "\ue641"
-        category: "\uf412"
-        checked: "\udb80\udd34"
-        unchecked: "\udb80\udd30"
-        sort: "\ueab4"
-        no_tasks: "\uf4a0"
-      categories:
-        default:
-          label: "General"
-        soon:
-          label: "Complete soon"
-        today:
-          label: "End of day"
-        urgent:
-          label: "Urgent"
-        important:
-          label: "Important"
-      callbacks:
-        on_left: "toggle_menu"
-        on_middle: "do_nothing"
-        on_right: "toggle_label"
-
   notifications:
     type: "yasb.notifications.NotificationsWidget"
     options:
@@ -395,304 +431,3 @@ widgets:
         on_left: "toggle_notification"
         on_middle: "do_nothing"
         on_right: "toggle_label"
-
-  cpu:
-    type: "yasb.cpu.CpuWidget"
-    options:
-      label: "<span>\uf4bc</span> {info[percent][total]}%"
-      label_alt: "<span>\uf437</span> {info[freq][current]} MHz"
-      update_interval: 2000
-      cpu_thresholds:
-        low: 25
-        medium: 50
-        high: 90
-      histogram_icons:
-        - "\u2581"
-        - "\u2581"
-        - "\u2582"
-        - "\u2583"
-        - "\u2584"
-        - "\u2585"
-        - "\u2586"
-        - "\u2587"
-        - "\u2588"
-      histogram_num_columns: 8
-      callbacks:
-        on_left: "exec cmd /c Taskmgr"
-        on_middle: "do_nothing"
-        on_right: "toggle_menu"
-
-      menu:
-        enabled: true
-        blur: true
-        round_corners: true
-        round_corners_type: "normal"
-        border_color: "System"
-        alignment: "right"
-        direction: "down"
-        offset_top: 6
-        offset_left: 0
-        show_graph: true
-        show_graph_grid: false
-        graph_history_size: 60
-
-  memory:
-    type: "yasb.memory.MemoryWidget"
-    options:
-      label: "<span>\uefc5</span> {virtual_mem_percent}%"
-      label_alt: "<span>\uefc5</span> {virtual_mem_used}/{virtual_mem_total}"
-      update_interval: 5000
-      memory_thresholds:
-        low: 25
-        medium: 50
-        high: 90
-      callbacks:
-        on_left: "toggle_label"
-        on_middle: "do_nothing"
-        on_right: "toggle_menu"
-      menu:
-        enabled: true
-        blur: true
-        round_corners: true
-        round_corners_type: "normal"
-        border_color: "System"
-        alignment: "right"
-        direction: "down"
-        offset_top: 6
-        offset_left: 0
-        show_graph: true
-        show_graph_grid: false
-        graph_history_size: 60
-
-  disk:
-    type: "yasb.disk.DiskWidget"
-    options:
-      label: "<span>\uf473</span> {space[used][percent]}"
-      label_alt: "<span>\uf473</span> {space[used][gb]} / {space[total][gb]}"
-      volume_label: "C"
-      update_interval: 60
-      disk_thresholds:
-        low: 50
-        medium: 75
-        high: 90
-      group_label:
-        volume_labels: ["C", "D", "E"]
-        show_label_name: true
-        blur: true
-        round_corners: true
-        round_corners_type: "normal"
-        border_color: "System"
-        alignment: "right"
-        direction: "down"
-      callbacks:
-        on_left: "toggle_label"
-        on_middle: "do_nothing"
-        on_right: "toggle_group"
-        # on_right: "exec explorer C:\\"
-
-  gpu:
-    type: "yasb.gpu.GpuWidget"
-    options:
-      label: "<span>\udb81\udd03</span> {info[utilization]}%"
-      label_alt: "<span>\udb81\udd03</span> {info[temp]}°C | {info[mem_used]}"
-      gpu_index: 0
-      update_interval: 2000
-      gpu_thresholds:
-        low: 25
-        medium: 50
-        high: 90
-      callbacks:
-        on_left: "toggle_label"
-        on_middle: "do_nothing"
-        on_right: "toggle_menu"
-      menu:
-        enabled: true
-        blur: true
-        round_corners: true
-        round_corners_type: "normal"
-        border_color: "System"
-        alignment: "right"
-        direction: "down"
-        offset_top: 6
-        offset_left: 0
-        show_graph: true
-        show_graph_grid: false
-        graph_history_size: 60
-
-  brightness:
-    type: "yasb.brightness.BrightnessWidget"
-    options:
-      label: "<span>{icon}</span>"
-      label_alt: "Brightness {percent}%"
-      tooltip: true
-      brightness_toggle_level: [0, 50, 100]
-      brightness_icons:
-        - "\udb80\udcde"
-        - "\udb80\udcdd"
-        - "\udb80\udcdf"
-        - "\udb80\udce0"
-      brightness_menu:
-        blur: true
-        round_corners: true
-        round_corners_type: "normal"
-        border_color: "System"
-        alignment: "right"
-        direction: "down"
-        offset_top: 6
-        offset_left: 0
-      callbacks:
-        on_left: "toggle_label"
-        on_middle: "do_nothing"
-        on_right: "toggle_brightness_menu"
-
-  volume:
-    type: "yasb.volume.VolumeWidget"
-    options:
-      label: "<span>{icon}</span> {level}"
-      label_alt: "Vol {volume}"
-      volume_icons:
-        - "\ueee8"
-        - "\uf026"
-        - "\uf027"
-        - "\uf027"
-        - "\uf028"
-      scroll_step: 2
-      slider_beep: false
-      tooltip: true
-      audio_menu:
-        blur: true
-        round_corners: true
-        round_corners_type: "normal"
-        border_color: "system"
-        alignment: "right"
-        direction: "down"
-        offset_top: 6
-        offset_left: 0
-        show_apps: true
-        show_app_labels: false
-        show_app_icons: true
-        show_apps_expanded: false
-      callbacks:
-        on_left: "toggle_volume_menu"
-        on_middle: "do_nothing"
-        on_right: "toggle_mute"
-
-  # wallpapers:
-  #   type: "yasb.wallpapers.WallpapersWidget"
-  #   options:
-  #     # 1. 图标换成了更简洁的“图片”样式图标
-  #     label: "<span>\uf03e</span>"
-  #     # 2. 图片预览尺寸统一调整为更大的 240px，视觉效果更舒展
-  #     image_path:
-  #       - "D:\\Central\\Pictures\\壁纸"
-  #     change_automatically: false
-  #     update_interval: 60
-  #     engine:
-  #       enabled: true
-  #       animation: "circle"
-  #     gallery:
-  #       # 3. 显式指定一个现代感更强的画廊布局
-  #       type: "magnified"
-  #       image_width: 240
-  #       orientation: "portrait"
-  #       image_corner_radius: 12
-  #     keybindings:
-  #       - keys: "ctrl+alt+w"
-  #         action: "toggle_gallery"
-  #         screen: "cursor"
-  #     run_after:
-  #       - "wal -s -t -e -q -n -i {image}"
-  #       - "cmd.exe /c start /min pwsh ./yasb.ps1"
-  #     callbacks:
-  #       on_left: "toggle_gallery"
-  #       on_middle: "do_nothing"
-  #       on_right: "change_wallpaper"
-
-  systray:
-    type: "yasb.systray.SystrayWidget"
-    options:
-      class_name: "systray"
-      label_collapsed: "\udb81\udfc3"
-      label_expanded: "\udb81\udf98"
-      label_position: "left"
-      icon_size: 16
-      pin_click_modifier: "alt"
-      show_in_popup: true
-      icons_per_row: 4
-      hide_icons:
-        - "weixin"
-      use_hook: true
-      popup:
-        blur: true
-        round_corners: true
-        round_corners_type: "normal"
-        border_color: None
-        alignment: "center"
-        direction: "down"
-        offset_top: 6
-        offset_left: 0
-
-  traffic:
-    type: "yasb.traffic.TrafficWidget"
-    options:
-      label: "\ueb01 \ueab4 {download_speed} | \ueab7 {upload_speed}"
-      label_alt: "Download {download_speed} | Upload {upload_speed}"
-      update_interval: 1000
-      menu:
-        blur: true
-        round_corners: true
-        round_corners_type: "normal"
-        border_color: "system"
-        alignment: "left"
-        direction: "down"
-        offset_top: 6
-        offset_left: 0
-      callbacks:
-        on_left: "toggle_label"
-        on_right: "toggle_menu"
-
-  # power_menu:
-  #   type: "yasb.power_menu.PowerMenuWidget"
-  #   options:
-  #     label: "<span>\uf011</span>"
-  #     uptime: true
-  #     show_user: true
-  #     blur: false
-  #     blur_background: true
-  #     animation_duration: 120
-  #     button_row: 3
-  #     profile_image_size: 80
-  #     buttons:
-  #       lock: ["\uea75", "Lock"]
-  #       sleep: ["\u23fe", "Sleep"]
-  #       restart: ["\uead2", "Restart"]
-  #       shutdown: ["\uf011", "Shut Down"]
-  #       signout: ["\udb80\udf43", "Sign out"]
-  #       cancel: ["\udb81\udf3a", "Cancel"]
-
-  # github:
-  #   type: "yasb.github.GithubWidget"
-  #   options:
-  #     label: "<span>\ueba1</span>"
-  #     label_alt: "Notifications {data}" # {data} return number of unread notification
-  #     max_notification: 30 # Max number of notification displaying in menu max: 50
-  #     notification_dot:
-  #       enabled: True
-  #       corner: "bottom_left" # Can be "top_left", "top_right", "bottom_left", "bottom_right"
-  #       color: "red" # Can be hex color or string
-  #       margin: [1, 1] # x and y margin for the dot
-  #     only_unread: false # Show only unread or all notifications;
-  #     show_comment_count: true # Summarize comment totals for issues, PRs, and discussions
-  #     reason_filters: [] # e.g. ['mention', 'assign'] to limit notifications by reason
-  #     max_field_size: 54 # Max characters in title before truncation.
-  #     update_interval: 300 # Check for new notification in seconds
-  #     menu:
-  #       blur: True # Enable blur effect for the menu
-  #       round_corners: True # Enable round corners for the menu (this option is not supported on Windows 10)
-  #       round_corners_type: "normal" # Set the type of round corners for the menu (normal, small) (this option is not supported on Windows 10)
-  #       border_color: "System" # Set the border color for the menu (this option is not supported on Windows 10)
-  #       alignment: "right"
-  #       direction: "down"
-  #       show_categories: false
-  #       categories_order:
-  #         ["PullRequest", "Issue", "CheckSuite", "Release", "Discussion"]
