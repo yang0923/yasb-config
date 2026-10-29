@@ -1,22 +1,11 @@
 .disk-widget {
   padding: var(--widget-padding);
 }
+
 .disk-widget .icon {
-  color: var(--sapphire);
+  color: var(--blue);
 }
+
 .disk-widget .label {
   color: var(--text);
-  font-weight: var(--label-weight);
-}
-.disk-widget .label.status-low {
-  color: var(--status-low);
-}
-.disk-widget .label.status-medium {
-  color: var(--status-medium);
-}
-.disk-widget .label.status-high {
-  color: var(--status-high);
-}
-.disk-widget .label.status-critical {
-  color: var(--status-critical);
 }

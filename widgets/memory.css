@@ -1,50 +1,11 @@
 .memory-widget {
   padding: var(--widget-padding);
 }
+
 .memory-widget .icon {
   color: var(--blue);
 }
-.memory-widget .label {
-  color: var(--text);
-  font-weight: var(--label-weight);
-}
-.memory-widget .label.status-low {
-  color: var(--status-low);
-}
-.memory-widget .label.status-medium {
-  color: var(--status-medium);
-}
-.memory-widget .label.status-high {
-  color: var(--status-high);
-}
-.memory-widget .label.status-critical {
-  color: var(--status-critical);
-}
-.memory-popup {
-  min-width: var(--menu-min-width);
-}
-.memory-popup .header .text {
-  font-size: 15px;
-  color: var(--text);
-  font-weight: 600;
-  padding: 10px;
-}
-.memory-popup .stats {
-  padding: 10px;
-}
-.memory-popup .stats .stat-label {
-  font-size: 12px;
-  color: var(--overlay1);
-  font-weight: 500;
-}
-.memory-popup .stats .stat-value {
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--text);
-}
+
 .memory-popup .memory-graph {
   color: var(--blue);
-}
-.memory-popup .memory-graph-grid {
-  color: #ffffff0d;
 }

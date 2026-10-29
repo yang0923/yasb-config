@@ -1,46 +1,11 @@
 .cpu-widget {
   padding: var(--widget-padding);
 }
+
 .cpu-widget .icon {
-  color: var(--mauve);
+  color: var(--blue);
 }
-.cpu-widget .label.status-low {
-  color: var(--status-low);
-}
-.cpu-widget .label.status-medium {
-  color: var(--status-medium);
-}
-.cpu-widget .label.status-high {
-  color: var(--status-high);
-}
-.cpu-widget .label.status-critical {
-  color: var(--status-critical);
-}
-.cpu-popup {
-  min-width: var(--menu-min-width);
-}
-.cpu-popup .header .text {
-  font-size: 15px;
-  color: var(--text);
-  font-weight: 600;
-  padding: 10px;
-}
-.cpu-popup .stats {
-  padding: 10px;
-}
-.cpu-popup .stats .stat-label {
-  font-size: 12px;
-  color: var(--overlay1);
-  font-weight: 500;
-}
-.cpu-popup .stats .stat-value {
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--text);
-}
+
 .cpu-popup .cpu-graph {
-  color: var(--mauve);
-}
-.cpu-popup .cpu-graph-grid {
-  color: #ffffff0d;
+  color: var(--blue);
 }

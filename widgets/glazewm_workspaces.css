@@ -1,18 +1,17 @@
 .glazewm-workspaces {
-  margin: 0;
-  padding: 0 6px;
+  padding: 0 var(--space-1);
 }
 
 .glazewm-workspaces .ws-btn {
   background-color: transparent;
   border: none;
-  padding: 4px 8px;
-  margin: 0 3px;
+  padding: 3px 7px;
+  margin: 0 2px;
   color: var(--overlay1);
-  border-radius: 6px;
+  border-radius: var(--btn-radius);
   transition:
-    background-color 0.22s cubic-bezier(0.4, 0, 0.2, 1),
-    color 0.22s ease;
+    background-color 0.15s ease,
+    color 0.15s ease;
 }
 
 /* 有窗口但未聚焦 */
@@ -20,26 +19,26 @@
   color: var(--subtext1);
 }
 
-/* 活动工作区（淡紫填充，保持你原来的样子） */
+/* 活动工作区 */
 .glazewm-workspaces .ws-btn.active_populated,
 .glazewm-workspaces .ws-btn.active_empty {
   color: var(--lavender);
-  background-color: #b4befe26;
+  background-color: var(--active-bg);
   font-weight: 600;
 }
 
-/* 新增：聚焦工作区（键盘焦点所在，在 active 基础上更强） */
+/* 聚焦工作区（键盘焦点所在） */
 .glazewm-workspaces .ws-btn.focused_populated,
 .glazewm-workspaces .ws-btn.focused_empty {
   color: var(--lavender);
-  background-color: #b4befe40;
+  background-color: var(--focus-bg);
   font-weight: 700;
 }
 
 /* 悬停 */
 .glazewm-workspaces .ws-btn:hover,
 .glazewm-workspaces .ws-btn.populated:hover {
-  background-color: #ffffff14;
+  background-color: var(--hover-bg);
   color: var(--text);
 }
 

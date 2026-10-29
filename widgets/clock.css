@@ -1,31 +1,36 @@
 .clock-widget {
   padding: var(--widget-padding);
 }
+
 .clock-widget .icon {
-  color: var(--blue);
-  padding-right: 5px;
+  color: var(--overlay2);
+  padding-right: var(--space-1);
 }
+
 .clock-widget .label {
   color: var(--text);
   font-weight: var(--label-weight);
 }
+
 .clock-popup.calendar {
-  background-color: #181825d9;
   min-width: 420px;
 }
+
 .clock-popup.calendar .calendar-table,
 .clock-popup.calendar .calendar-table::item {
   background-color: transparent;
-  color: #a2adc8d9;
+  color: var(--subtext0);
   border: none;
   outline: none;
 }
+
 .clock-popup.calendar .calendar-table::item:selected {
   color: var(--crust);
   font-weight: 700;
   background-color: var(--lavender);
   border-radius: 12px;
 }
+
 .clock-popup.calendar .day-label,
 .clock-popup.calendar .month-label,
 .clock-popup.calendar .year-label,
@@ -34,7 +39,9 @@
   color: var(--text);
   font-weight: 700;
 }
+
 .clock-popup.calendar .date-label {
   font-size: 72px;
   font-weight: 900;
+  color: var(--lavender);
 }

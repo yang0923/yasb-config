@@ -1,14 +1,23 @@
 .volume-widget {
   padding: var(--widget-padding);
 }
+
 .volume-widget .icon {
-  color: var(--teal);
-  margin-right: 3px;
-  padding: 0 3px;
+  color: var(--overlay2);
+  margin-right: 2px;
+  padding: 0 2px;
 }
+
 .volume-widget .label {
+  color: var(--subtext1);
   font-weight: var(--label-weight);
 }
+
+.volume-widget:hover .label,
+.volume-widget:hover .icon {
+  color: var(--text);
+}
+
 .volume-widget .label.muted,
 .volume-widget .icon.muted {
   color: var(--overlay0);

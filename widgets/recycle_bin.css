@@ -1,28 +1,29 @@
 .recycle-bin-widget {
-  padding: 0;
-  margin: 4px 2px;
+  padding: 0 var(--space-1);
+  margin: 0;
   border-radius: var(--widget-radius);
+  transition: background-color 0.15s ease;
 }
+
 .recycle-bin-widget:hover {
-  background-color: #31324499;
+  background-color: var(--hover-bg);
 }
+
 .recycle-bin-widget .icon {
-  margin-right: 6px;
+  margin-right: var(--space-1);
+  color: var(--overlay2);
 }
+
 .recycle-bin-widget .label {
-  color: var(--text);
+  color: var(--subtext0);
   font-weight: var(--label-weight);
 }
-.recycle-bin-widget .icon.bin-empty {
-  color: var(--green);
-}
-.recycle-bin-widget .label.bin-empty {
-  color: var(--subtext0);
-}
+
 .recycle-bin-widget .icon.bin-filled {
   color: var(--red);
 }
+
 .recycle-bin-widget .label.bin-filled {
-  color: var(--lavender);
-  font-weight: 700;
+  color: var(--text);
+  font-weight: 600;
 }

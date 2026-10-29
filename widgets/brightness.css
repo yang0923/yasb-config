@@ -1,13 +1,20 @@
 .brightness-widget {
   padding: var(--widget-padding);
 }
+
 .brightness-widget .icon {
-  color: var(--yellow);
-  padding: 0 5px;
+  color: var(--overlay2);
+  padding: 0 2px;
 }
+
+.brightness-widget:hover .icon {
+  color: var(--text);
+}
+
 .brightness-menu {
   min-width: 240px;
 }
+
 .brightness-slider {
   border: none;
 }

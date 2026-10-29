@@ -1,129 +1,132 @@
+.traffic-widget {
+  padding: var(--widget-padding);
+}
+
 .traffic-widget .label {
   color: var(--blue);
-  padding: 0 2px;
 }
+
 .traffic-menu {
   min-width: 280px;
 }
+
 .traffic-menu .header {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  background-color: rgba(24, 25, 27, 0.8);
+  border-bottom: 1px solid rgba(180, 190, 254, 0.08);
+  background-color: transparent;
 }
+
 .traffic-menu .header .title {
-  padding: 8px;
+  padding: var(--space-2);
   font-size: 16px;
   font-weight: 600;
-  /* font-family: 'Segoe UI'; 删除，继承全局字体 */
   color: var(--text);
 }
+
 .traffic-menu .header .reset-button {
   font-size: 11px;
-  padding: 4px 8px;
-  margin-right: 8px;
-  /* font-family: 'Segoe UI'; 删除 */
-  border-radius: 4px;
+  padding: var(--space-1) var(--space-2);
+  margin-right: var(--space-2);
+  border-radius: var(--btn-radius);
   font-weight: 600;
   background-color: transparent;
   border: none;
 }
+
 .traffic-menu .reset-button:hover {
   color: var(--text);
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: var(--hover-bg);
 }
+
 .traffic-menu .reset-button:pressed {
   color: var(--text);
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: var(--active-bg);
 }
-/* Speed column styles */
+
+/* ---------- 速率 ---------- */
 .traffic-menu .download-speed,
 .traffic-menu .upload-speed {
   background-color: transparent;
-  padding: 4px 10px;
-  margin-right: 12px;
-  margin-left: 12px;
-  margin-top: 16px;
-  margin-bottom: 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: var(--space-1) 10px;
+  margin: var(--space-3) var(--space-3) 0 var(--space-3);
+  border-bottom: 1px solid rgba(180, 190, 254, 0.12);
 }
-.traffic-menu .download-speed {
-  margin-left: 12px;
-  margin-right: 12px;
-}
+
 .traffic-menu .speed-separator {
   max-width: 1px;
-  background-color: rgba(255, 255, 255, 0.2);
-  margin: 32px 0 16px 0;
+  background-color: rgba(180, 190, 254, 0.12);
+  margin: 32px 0 var(--space-3) 0;
 }
+
 .traffic-menu .upload-speed-value,
 .traffic-menu .download-speed-value {
   font-size: 24px;
   font-weight: 900;
-  /* font-family: 'Segoe UI'; 删除 */
   color: var(--subtext0);
 }
+
 .traffic-menu .upload-speed-unit,
 .traffic-menu .download-speed-unit {
   font-size: 13px;
-  /* font-family: 'Segoe UI'; 删除 */
   font-weight: 600;
-  padding-top: 4px;
+  padding-top: var(--space-1);
   color: var(--overlay1);
 }
+
 .traffic-menu .upload-speed-placeholder,
 .traffic-menu .download-speed-placeholder {
   color: var(--overlay0);
   font-size: 11px;
-  /* font-family: 'Segoe UI'; 删除 */
-  padding: 0 0 4px 0;
+  padding: 0 0 var(--space-1) 0;
 }
 
-/* Section and data styles */
+/* ---------- 分区 ---------- */
 .traffic-menu .section-title {
   font-size: 12px;
   font-weight: 600;
   color: var(--subtext0);
-  margin-bottom: 4px;
-  /* font-family: 'Segoe UI'; 删除 */
+  margin-bottom: var(--space-1);
 }
+
 .traffic-menu .session-section,
 .traffic-menu .today-section,
 .traffic-menu .alltime-section {
-  margin: 8px 8px 0 8px;
+  margin: var(--space-2) var(--space-2) 0 var(--space-2);
   padding: 0 10px 10px 10px;
   background-color: transparent;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(180, 190, 254, 0.08);
 }
+
 .traffic-menu .data-text {
   font-size: 13px;
   color: var(--subtext1);
   padding: 2px 0;
-  /* font-family: 'Segoe UI'; 删除 */
 }
+
 .traffic-menu .data-value {
   font-weight: 600;
   font-size: 13px;
-  /* font-family: 'Segoe UI'; 删除 */
   padding: 2px 0;
   color: var(--text);
 }
-/* Interface and Internet info styles */
+
+/* ---------- 网卡 / 联网状态 ---------- */
 .traffic-menu .interface-info,
 .traffic-menu .internet-info {
   font-size: 12px;
   color: var(--overlay1);
-  padding: 8px 0;
-  /* font-family: 'Segoe UI'; 删除 */
+  padding: var(--space-2) 0;
 }
+
 .traffic-menu .internet-info {
-  background-color: rgba(68, 68, 68, 0.1);
+  background-color: rgba(147, 153, 178, 0.06);
 }
+
 .traffic-menu .internet-info.connected {
-  background-color: rgba(166, 227, 161, 0.096);
+  background-color: rgba(166, 227, 161, 0.08);
   color: var(--green);
 }
+
 .traffic-menu .internet-info.disconnected {
-  background-color: rgba(243, 139, 168, 0.1);
+  background-color: rgba(243, 139, 168, 0.08);
   color: var(--red);
 }

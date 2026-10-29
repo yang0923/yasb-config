@@ -1,0 +1,63 @@
+/* ============================================================
+   YASB 设计 token（唯一改色的地方）
+   颜色 / 间距 / 字号 / 弹窗 / 状态色
+   ============================================================ */
+:root {
+  /* ---------- Catppuccin Mocha ---------- */
+  --base: #1e1e2e;
+  --mantle: #181825;
+  --crust: #11111b;
+  --surface0: #313244;
+  --surface1: #45475a;
+  --surface2: #585b70;
+  --overlay0: #6c7086;
+  --overlay1: #7f849c;
+  --overlay2: #9399b2;
+  --text: #cdd6f4;
+  --subtext0: #a6adc8;
+  --subtext1: #bac2de;
+  --lavender: #b4befe;
+  --blue: #89b4fa;
+  --sapphire: #74c7ec;
+  --sky: #89dceb;
+  --teal: #94e2d5;
+  --green: #a6e3a1;
+  --yellow: #f9e2af;
+  --peach: #fab387;
+  --maroon: #eba0ac;
+  --red: #f38ba8;
+  --mauve: #cba6f7;
+  --pink: #f5c2e7;
+  --flamingo: #f2cdcd;
+  --rosewater: #f5e0dc;
+
+  /* ---------- 间距（4px 网格） ---------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --widget-padding: 0 var(--space-1);
+  --container-padding: 2px var(--space-2);
+  --widget-radius: 8px;
+  --btn-radius: 6px;
+
+  /* ---------- 字号 ---------- */
+  --icon-size: 16px;
+  --label-size: 13px;
+  --label-weight: 500;
+
+  /* ---------- 交互底色（lavender 系，统一 hover/active） ---------- */
+  --hover-bg: rgba(180, 190, 254, 0.08);
+  --active-bg: rgba(180, 190, 254, 0.16);
+  --focus-bg: rgba(180, 190, 254, 0.24);
+
+  /* ---------- 弹窗 ---------- */
+  --menu-bg: rgba(24, 24, 37, 0.9);
+  --menu-border: 1px solid rgba(180, 190, 254, 0.08);
+  --menu-radius: 12px;
+  --menu-min-width: 360px;
+
+  /* ---------- 状态色（低负载不着色，只有中/高/临界才变） ---------- */
+  --status-medium: var(--yellow);
+  --status-high: var(--peach);
+  --status-critical: var(--red);
+}

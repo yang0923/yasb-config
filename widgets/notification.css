@@ -1,12 +1,19 @@
 .notification-widget {
   padding: var(--widget-padding);
 }
+
 .notification-widget .icon {
   color: var(--overlay2);
 }
+
+.notification-widget:hover .icon {
+  color: var(--text);
+}
+
 .notification-widget .icon.new-notification {
   color: var(--blue);
 }
+
 .notification-widget .label.new-notification {
   color: var(--blue);
   font-weight: 600;

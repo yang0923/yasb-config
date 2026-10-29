@@ -1,51 +1,7 @@
-:root {
-  /* ========== Catppuccin Mocha 色板 ========== */
-  --base: #1e1e2e;
-  --mantle: #181825;
-  --crust: #11111b;
-  --surface0: #313244;
-  --surface1: #45475a;
-  --surface2: #585b70;
-  --overlay0: #6c7086;
-  --overlay1: #7f849c;
-  --overlay2: #9399b2;
-  --text: #cdd6f4;
-  --subtext0: #a6adc8;
-  --subtext1: #bac2de;
-  --lavender: #b4befe;
-  --blue: #89b4fa;
-  --sapphire: #74c7ec;
-  --sky: #89dceb;
-  --teal: #94e2d5;
-  --green: #a6e3a1;
-  --yellow: #f9e2af;
-  --peach: #fab387;
-  --maroon: #eba0ac;
-  --red: #f38ba8;
-  --mauve: #cba6f7;
-  --pink: #f5c2e7;
-  --flamingo: #f2cdcd;
-  --rosewater: #f5e0dc;
-
-  /* ========== 通用布局变量 ========== */
-  --widget-padding: 0 2px;
-  --widget-radius: 8px;
-  --icon-size: 16px;
-  --label-size: 14px;
-  --label-weight: 500;
-
-  /* ========== 菜单/弹窗通用变量 ========== */
-  --menu-bg: #181825e6;
-  --menu-border: 1px solid #b4befe14;
-  --menu-radius: 10px;
-  --menu-min-width: 360px;
-
-  /* ========== 状态阈值颜色 ========== */
-  --status-low: var(--green);
-  --status-medium: var(--yellow);
-  --status-high: var(--peach);
-  --status-critical: var(--red);
-}
+/* ============================================================
+   base：全局 reset + 通用组件（弹窗骨架 / 滚动条 / tooltip / 右键菜单）
+   具体 widget 样式在各自文件里
+   ============================================================ */
 * {
   font-size: 13px;
   font-family:
@@ -56,95 +12,156 @@
   padding: 0;
   border: none;
 }
+
 .yasb-bar {
-  background-color: #181825d7;
-  border-bottom: 1px solid #b4befe0f;
+  background-color: rgba(24, 24, 37, 0.84);
+  border-bottom: 1px solid rgba(180, 190, 254, 0.06);
   padding-top: 2px;
 }
+
 .widget {
   padding: 0;
   color: var(--text);
 }
+
 .widget .widget-container {
   border-radius: var(--widget-radius);
-  padding: 2px 4px;
+  padding: var(--container-padding);
 }
+
 .widget .label,
 .widget .icon {
   color: var(--text);
   padding: 0 2px;
   font-weight: var(--label-weight);
 }
+
+.widget .label {
+  font-size: var(--label-size);
+}
+
 .widget .icon {
   font-size: var(--icon-size);
   font-weight: 400;
 }
-/* ========== 通用状态阈值 class ========== */
-.status-low {
-  color: var(--status-low);
-}
-.status-medium {
+
+/* ---------- 状态阈值 ----------
+   低负载保持默认文字色，只有中 / 高 / 临界才着色 */
+.widget .label.status-medium {
   color: var(--status-medium);
 }
-.status-high {
+
+.widget .label.status-high {
   color: var(--status-high);
 }
-.status-critical {
+
+.widget .label.status-critical {
   color: var(--status-critical);
 }
+
 .container-left,
 .container-center,
 .container-right {
   margin: 0;
   padding: 0;
 }
-.notes-menu,
-.todo-menu,
-.ai-chat-popup,
-.github-menu,
-.traffic-menu,
+
+/* ---------- 弹窗骨架（统一背景 / 边框 / 圆角） ---------- */
 .cpu-popup,
 .memory-popup,
 .gpu-popup,
-.pomodoro-menu,
+.traffic-menu,
 .audio-menu,
-.wifi-menu,
 .brightness-menu,
-.open-meteo-card {
+.media-menu,
+.clock-popup.calendar {
   background-color: var(--menu-bg);
   border: var(--menu-border);
   border-radius: var(--menu-radius);
 }
+
+.cpu-popup,
+.memory-popup,
+.gpu-popup {
+  min-width: var(--menu-min-width);
+}
+
+/* CPU / 内存 / GPU 三个弹窗结构一致，公共部分集中在这里 */
+.cpu-popup .header .text,
+.memory-popup .header .text,
+.gpu-popup .header .text {
+  font-size: 15px;
+  color: var(--text);
+  font-weight: 600;
+  padding: var(--space-3);
+}
+
+.cpu-popup .stats,
+.memory-popup .stats,
+.gpu-popup .stats {
+  padding: var(--space-3);
+}
+
+.cpu-popup .stats .stat-label,
+.memory-popup .stats .stat-label,
+.gpu-popup .stats .stat-label {
+  font-size: 12px;
+  color: var(--overlay1);
+  font-weight: 500;
+}
+
+.cpu-popup .stats .stat-value,
+.memory-popup .stats .stat-value,
+.gpu-popup .stats .stat-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.cpu-popup .cpu-graph-grid,
+.memory-popup .memory-graph-grid,
+.gpu-popup .gpu-graph-grid {
+  color: rgba(205, 214, 244, 0.06);
+}
+
+/* ---------- 滚动条 ---------- */
 QScrollBar:vertical {
-  background-color: #0003;
+  background-color: rgba(0, 0, 0, 0.2);
   width: 8px;
   border-radius: 4px;
 }
+
 QScrollBar:horizontal {
-  background-color: #0003;
+  background-color: rgba(0, 0, 0, 0.2);
   height: 8px;
   border-radius: 4px;
 }
+
 QScrollBar::handle {
   background-color: var(--surface2);
   border-radius: 4px;
 }
+
 QScrollBar::handle:hover {
   background-color: var(--overlay0);
 }
+
 QScrollBar::add-line,
 QScrollBar::sub-line {
   height: 0;
   width: 0;
 }
+
 QScrollBar::add-page,
 QScrollBar::sub-page {
   background: none;
 }
+
+/* ---------- Tooltip ---------- */
 .tooltip {
   background-color: var(--surface0);
   border: 1px solid var(--surface1);
-  border-radius: 4px;
+  border-radius: var(--btn-radius);
   color: var(--subtext1);
   padding: 5px 10px;
   font-size: 12px;
@@ -152,6 +169,7 @@ QScrollBar::sub-page {
   margin-top: 4px;
   border-style: solid;
 }
+
 .notification-dot {
   background-color: var(--red);
   border-radius: 50%;
@@ -160,37 +178,45 @@ QScrollBar::sub-page {
   max-width: 6px;
   max-height: 6px;
 }
+
+/* ---------- 右键菜单 ---------- */
 .context-menu {
   background-color: var(--surface0);
   border: none;
-  padding: 5px 0;
+  padding: var(--space-1) 0;
   font-size: 12px;
   color: var(--text);
-  border-radius: 8px;
+  border-radius: var(--widget-radius);
 }
+
 .context-menu::item {
   background-color: transparent;
-  padding: 7px 12px;
-  margin: 3px 6px;
+  padding: 6px 12px;
+  margin: 2px 6px;
   border-radius: 5px;
   min-width: 90px;
 }
+
 .context-menu::item:selected {
   background-color: var(--surface1);
   color: var(--text);
 }
+
 .context-menu::item:checked {
-  background-color: #b4befe40;
+  background-color: var(--active-bg);
   color: var(--lavender);
 }
+
 .context-menu::item:pressed {
   background-color: var(--surface2);
 }
+
 .context-menu::item:disabled {
   color: var(--overlay0);
 }
+
 .context-menu::separator {
   height: 1px;
   background-color: var(--surface1);
-  margin: 3px 7px;
+  margin: 2px 6px;
 }

@@ -1,0 +1,13 @@
+.glazewm-tiling-direction {
+  padding: var(--widget-padding);
+}
+
+.glazewm-tiling-direction .icon,
+.glazewm-tiling-direction .label {
+  color: var(--overlay2);
+}
+
+.glazewm-tiling-direction:hover .icon,
+.glazewm-tiling-direction:hover .label {
+  color: var(--text);
+}
