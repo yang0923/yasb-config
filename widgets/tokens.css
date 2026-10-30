@@ -32,9 +32,9 @@
   --rosewater: #f5e0dc;
 
   /* ---------- 间距（4px 网格） ---------- */
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
+  --space-1: 2px;
+  --space-2: 4px;
+  --space-3: 8px;
   --widget-padding: 0 var(--space-1);
   --container-padding: 2px var(--space-2);
   --widget-radius: 8px;
