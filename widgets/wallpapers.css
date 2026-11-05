@@ -1,0 +1,13 @@
+.wallpapers-widget {
+  padding: var(--widget-padding);
+}
+
+.wallpapers-widget .icon {
+  color: var(--overlay2);
+  font-family: "Segoe Fluent Icons";
+  font-weight: 400;
+}
+
+.wallpapers-widget:hover .icon {
+  color: var(--text);
+}

@@ -10,6 +10,7 @@
 - 🪟 **GlazeWM 集成**：工作区、绑定模式、平铺方向、活动窗口
 - 📊 **系统监控**：CPU / GPU / 内存 / 磁盘 / 网络流量，按阈值变色
 - 🎵 **媒体控制**：标题滚动、缩略图、播放控制、按音源着色的弹窗
+- 🖼️ **壁纸切换**：画廊选图、双击应用、切换动画，`Ctrl+Alt+W` 呼出
 - 🔔 **通知中心**：统一接管 Windows 通知
 - 📅 **时钟日历**：中文 locale，含周数
 - 🖼️ **毛玻璃**：任务栏与所有弹窗统一模糊 + 圆角
@@ -30,6 +31,7 @@ yasb-config/
     ├── recycle_bin.css
     ├── cpu.css  gpu.css  memory.css  disk.css  traffic.css
     ├── media.css
+    ├── wallpapers.css
     ├── brightness.css  volume.css  audio.css
     ├── clock.css
     └── notification.css
@@ -41,7 +43,7 @@ yasb-config/
 |---|---|
 | **左** | 回收站 · 绑定模式 · 平铺方向 · 工作区 · 活动窗口 |
 | **中** | CPU · GPU · 内存 · 磁盘 · 流量 |
-| **右** | 媒体 · 亮度 · 音量 · 时钟 · 通知 |
+| **右** | 壁纸 · 媒体 · 亮度 · 音量 · 时钟 · 通知 |
 
 顶栏高 36px，不启用 `windows_app_bar`：窗口让位交给 GlazeWM 的 `outer_gap.top: 42px`（栏高 36 + 6 间距）。改栏高时同步改这个 gap。
 
@@ -52,6 +54,7 @@ yasb-config/
 | Widget | 左键 | 右键 | 其他 |
 |---|---|---|---|
 | 回收站 | 打开回收站 | 清空（带确认） | `Win + Del` 清空 |
+| 壁纸 | 打开画廊 | 随机换一张 | `Ctrl + Alt + W` 打开画廊 |
 | CPU / GPU / 内存 / 磁盘 | 切换 label / label_alt | 打开图表菜单 | CPU 中键开任务管理器 |
 | 流量 | 切换 label | 打开流量菜单 | |
 | 媒体 | 切换 label | 打开媒体菜单 | 中键打开来源应用 |
