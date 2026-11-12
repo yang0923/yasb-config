@@ -61,7 +61,6 @@ bars:
         - "disk"
         - "traffic"
       right:
-        - "wallpapers"
         - "media"
         - "brightness"
         - "volume"
@@ -276,34 +275,6 @@ widgets:
         offset_left: 0
 
   # ---------- 右侧：媒体与系统 ----------
-  wallpapers:
-    type: "yasb.wallpapers.WallpapersWidget"
-    options:
-      label: "<span>\ue7aa</span>"
-      tooltip: true
-      # 壁纸目录，可写多个
-      image_path:
-        - "D:\\Central\\Pictures\\壁纸"
-      change_automatically: false
-      update_interval: 60
-      # 切换壁纸的过渡动画（需要系统“动画效果”开启，否则直接切换）
-      engine:
-        enabled: true
-        animation: "circle"
-      gallery:
-        type: "magnified"
-        image_width: 220
-        orientation: "portrait"
-        image_corner_radius: 12
-        accent_color: "#b4befe"
-      keybindings:
-        - keys: "ctrl+alt+w"
-          action: "toggle_gallery"
-          screen: "cursor"
-      callbacks:
-        on_left: "toggle_gallery"
-        on_middle: "do_nothing"
-        on_right: "change_wallpaper"
 
   media:
     type: "yasb.media.MediaWidget"
